@@ -1,0 +1,1074 @@
+{
+  "users": [
+    {
+      "id": "bc199144-523b-4d95-a456-5a6f3c92b920",
+      "created_at": "2026-10-06T10:24:38.109Z",
+      "updated_at": "2026-10-06T10:24:38.109Z",
+      "name": "Varshini Test",
+      "email": "varshini@test.com",
+      "password_hash": "$2b$10$.XYhT0XpfoJGcxjBkAaJQu4JkogACqJXvCor/rg7aRt0Rg6uCgOba"
+    },
+    {
+      "id": "e4396493-ce19-41ba-bdd1-b145b630dc40",
+      "created_at": "2026-10-06T10:25:49.676Z",
+      "updated_at": "2026-10-06T10:25:49.676Z",
+      "name": "Varshini New",
+      "email": "varshini_new@test.com",
+      "password_hash": "$2b$10$WlGk2CX.XKrZnGgBmADnRuQNX4u3jKM2Eob7LafuYc/cdUeHRqZoy"
+    },
+    {
+      "id": "16f1ac36-88a9-4d35-af68-e9971259a914",
+      "created_at": "2026-10-06T10:26:43.835Z",
+      "updated_at": "2026-10-06T10:26:43.835Z",
+      "name": "User A",
+      "email": "usera@test.com",
+      "password_hash": "$2b$10$yPBGZq2bmDYUZkla3m3THewzh/GPVvL8T8nUcFOrJ78LrMrkRX472"
+    },
+    {
+      "id": "68dfd023-5eed-4c94-b042-34c963fd0021",
+      "created_at": "2026-10-06T10:26:43.919Z",
+      "updated_at": "2026-10-06T10:26:43.919Z",
+      "name": "User B",
+      "email": "userb@test.com",
+      "password_hash": "$2b$10$luOu13aoH1d29UikbH8CBePWZW7Y6CNti9NI.gL/6x1TWywf3GSBS"
+    },
+    {
+      "id": "89c17e42-c184-428a-9b24-4b213e730125",
+      "created_at": "2026-10-06T10:27:42.757Z",
+      "updated_at": "2026-10-06T10:27:42.757Z",
+      "name": "User A",
+      "email": "usera_1791282462605@test.com",
+      "password_hash": "$2b$10$oFzFNB2p9UV7uDWLsjU.RuiBQYsm/plNrM26J..j53ZvV7GoV1jTC"
+    },
+    {
+      "id": "00f0640c-ddc3-4a4f-9598-b6d66e9ef688",
+      "created_at": "2026-10-06T10:27:42.843Z",
+      "updated_at": "2026-10-06T10:27:42.843Z",
+      "name": "User B",
+      "email": "userb_1791282462605@test.com",
+      "password_hash": "$2b$10$5/JIX9tz/hYSAnFshR0i/eR46S6n.F.grACqsxpPar.l1BDTVNK8C"
+    },
+    {
+      "id": "34017ecf-c8fc-49f6-9bf1-1ce01d672295",
+      "created_at": "2026-10-06T10:59:11.722Z",
+      "updated_at": "2026-10-06T10:59:11.722Z",
+      "name": "varshini",
+      "email": "testcustomer99@gmail.com",
+      "password_hash": "$2b$10$3Nt6sP2dI17NjKK8ETD1deo7VYvtXOMtGsvwCEYrja.PoefLh7Tnm"
+    },
+    {
+      "id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "created_at": "2026-10-06T11:03:18.393Z",
+      "updated_at": "2026-10-06T11:03:18.393Z",
+      "name": "Ananya Sharma",
+      "email": "ananya_1791284598300@test.edu",
+      "password_hash": "$2b$10$vcfZe4Y7SHthj0m0UTfBM.s/JU799MQMm5Lyh1UT8GEE3Tw5zWbBK"
+    },
+    {
+      "id": "d4d2fb92-968a-421b-b1e6-074709cc2e71",
+      "created_at": "2026-10-06T11:03:18.585Z",
+      "updated_at": "2026-10-06T11:03:18.585Z",
+      "name": "User B Hacker",
+      "email": "userb_1791284598515@test.edu",
+      "password_hash": "$2b$10$xK.H50rmqLvw2kYXI4juc.AgEPo0VwpeJUZKoRE1960gIc2JChs1O"
+    },
+    {
+      "id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "created_at": "2026-10-06T11:05:58.881Z",
+      "updated_at": "2026-10-06T11:05:58.881Z",
+      "name": "Ananya Sharma",
+      "email": "ananya_1791284758802@test.edu",
+      "password_hash": "$2b$10$v9/c28ildcJz.wWqfJDqCuTRm/0ziQAjwJdPHRJfy6MM0PqlrLM7S"
+    },
+    {
+      "id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "created_at": "2026-10-06T11:07:02.048Z",
+      "updated_at": "2026-10-06T11:07:02.048Z",
+      "name": "Ananya Sharma",
+      "email": "ananya_1791284821953@test.edu",
+      "password_hash": "$2b$10$iM1IZpNJb5u0zL3N..Fc/Ow88DwjcSAz02d.THyqbTwAEb7WbMvWe"
+    },
+    {
+      "id": "98f20cd7-c098-4c98-8d7d-51e4d639f878",
+      "created_at": "2026-10-06T11:07:02.272Z",
+      "updated_at": "2026-10-06T11:07:02.272Z",
+      "name": "User B Hacker",
+      "email": "userb_1791284822196@test.edu",
+      "password_hash": "$2b$10$7JVHsrhNuDSNF7K3ka73SeBOkL5mPI0czPc9r1.pv9v6fgqM95yF."
+    },
+    {
+      "id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "created_at": "2026-10-06T11:09:18.381Z",
+      "updated_at": "2026-10-06T11:09:18.381Z",
+      "name": "Ananya Sharma",
+      "email": "ananya_1791284958311@test.edu",
+      "password_hash": "$2b$10$RRkRBp0Vy6x6knBi6ABx3OA4V/MjO/AOJZEpSbYy3fD/J7izXMOBG"
+    },
+    {
+      "id": "1c080ccb-709c-47ec-8632-d0fe7e8c2dbc",
+      "created_at": "2026-10-06T11:09:18.562Z",
+      "updated_at": "2026-10-06T11:09:18.562Z",
+      "name": "User B Hacker",
+      "email": "userb_1791284958497@test.edu",
+      "password_hash": "$2b$10$zBseEAwMqUMa1nGga1IQBOh3Vq3vlRCAkh9vpXIVuTEj9Cl5f6bwO"
+    }
+  ],
+  "students": [
+    {
+      "id": "c53a2d23-538f-478d-a43c-5e4902fd2294",
+      "created_at": "2026-10-06T10:24:38.111Z",
+      "updated_at": "2026-10-06T10:24:38.130Z",
+      "user_id": "bc199144-523b-4d95-a456-5a6f3c92b920",
+      "full_name": "Varshini Test",
+      "profile_completion": 10
+    },
+    {
+      "id": "af829df4-d402-485e-8b39-9d51a069b333",
+      "created_at": "2026-10-06T10:25:49.678Z",
+      "updated_at": "2026-10-06T10:25:49.696Z",
+      "user_id": "e4396493-ce19-41ba-bdd1-b145b630dc40",
+      "full_name": "Varshini Rao",
+      "profile_completion": 74,
+      "age": 20,
+      "state": "Telangana",
+      "district": null,
+      "course": "B.Tech",
+      "branch": "Computer Science",
+      "year": "3rd Year",
+      "college_name": "JNTUH College of Engineering",
+      "college_type": "Government",
+      "cgpa": 8.8,
+      "percentage": 88,
+      "annual_family_income": 180000,
+      "category": "OBC",
+      "gender": "Female",
+      "disability_status": false,
+      "minority_status": false,
+      "rural_urban": "Urban",
+      "previous_scholarship": false,
+      "achievements": null
+    },
+    {
+      "id": "7a3c2c34-95b1-4fdf-b98b-d5f8adecd8c0",
+      "created_at": "2026-10-06T10:26:43.838Z",
+      "updated_at": "2026-10-06T10:26:43.838Z",
+      "user_id": "16f1ac36-88a9-4d35-af68-e9971259a914",
+      "full_name": "User A",
+      "profile_completion": 10
+    },
+    {
+      "id": "15aebd28-148a-4eda-a3e6-7906b9e6a388",
+      "created_at": "2026-10-06T10:26:43.920Z",
+      "updated_at": "2026-10-06T10:26:43.920Z",
+      "user_id": "68dfd023-5eed-4c94-b042-34c963fd0021",
+      "full_name": "User B",
+      "profile_completion": 10
+    },
+    {
+      "id": "e55143ab-e054-49c8-b6f0-ebf3065a3996",
+      "created_at": "2026-10-06T10:27:42.758Z",
+      "updated_at": "2026-10-06T10:27:42.758Z",
+      "user_id": "89c17e42-c184-428a-9b24-4b213e730125",
+      "full_name": "User A",
+      "profile_completion": 10
+    },
+    {
+      "id": "1ffc2802-bb85-4675-9c72-597e4aba0ff8",
+      "created_at": "2026-10-06T10:27:42.846Z",
+      "updated_at": "2026-10-06T10:27:42.846Z",
+      "user_id": "00f0640c-ddc3-4a4f-9598-b6d66e9ef688",
+      "full_name": "User B",
+      "profile_completion": 10
+    },
+    {
+      "id": "4df64686-f9d6-467c-971b-f48059f7bb1a",
+      "created_at": "2026-10-06T10:59:11.726Z",
+      "updated_at": "2026-10-06T16:31:05.646Z",
+      "user_id": "34017ecf-c8fc-49f6-9bf1-1ce01d672295",
+      "full_name": "varshini",
+      "profile_completion": 95,
+      "age": 18,
+      "state": "Andhra pradesh",
+      "district": "Yellamanchilli",
+      "course": "B.Tech",
+      "branch": "CSE",
+      "year": "2nd Year",
+      "college_name": "Annamcharya University",
+      "college_type": "Government",
+      "cgpa": 9.2,
+      "percentage": 91.63,
+      "annual_family_income": 100000,
+      "category": "EWS",
+      "gender": "Female",
+      "disability_status": false,
+      "minority_status": false,
+      "rural_urban": "Urban",
+      "previous_scholarship": false,
+      "achievements": null
+    },
+    {
+      "id": "1fa7c912-9e4a-4007-aec8-5c28cf2e9945",
+      "created_at": "2026-10-06T11:03:18.395Z",
+      "updated_at": "2026-10-06T11:03:18.486Z",
+      "user_id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "full_name": "Ananya Sharma",
+      "profile_completion": 84,
+      "age": 20,
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "course": "B.Tech",
+      "branch": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "college_name": "JNTUH College of Engineering",
+      "college_type": "Government",
+      "cgpa": 8.85,
+      "percentage": 88.5,
+      "annual_family_income": 180000,
+      "category": "OBC",
+      "gender": "Female",
+      "disability_status": false,
+      "minority_status": false,
+      "rural_urban": "Urban",
+      "previous_scholarship": false,
+      "achievements": "State rank in EAMCET, published tech paper"
+    },
+    {
+      "id": "23851df1-6e38-4773-91ea-63b4873122a9",
+      "created_at": "2026-10-06T11:03:18.587Z",
+      "updated_at": "2026-10-06T11:03:18.587Z",
+      "user_id": "d4d2fb92-968a-421b-b1e6-074709cc2e71",
+      "full_name": "User B Hacker",
+      "profile_completion": 10
+    },
+    {
+      "id": "a88757ba-4d87-4364-858c-fdc1760d6ac5",
+      "created_at": "2026-10-06T11:05:58.883Z",
+      "updated_at": "2026-10-06T11:05:58.974Z",
+      "user_id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "full_name": "Ananya Sharma",
+      "profile_completion": 84,
+      "age": 20,
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "course": "B.Tech",
+      "branch": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "college_name": "JNTUH College of Engineering",
+      "college_type": "Government",
+      "cgpa": 8.85,
+      "percentage": 88.5,
+      "annual_family_income": 180000,
+      "category": "OBC",
+      "gender": "Female",
+      "disability_status": false,
+      "minority_status": false,
+      "rural_urban": "Urban",
+      "previous_scholarship": false,
+      "achievements": "State rank in EAMCET, published tech paper"
+    },
+    {
+      "id": "88c721f9-cd37-46d4-8888-c7e8dd405dfb",
+      "created_at": "2026-10-06T11:07:02.051Z",
+      "updated_at": "2026-10-06T11:07:02.134Z",
+      "user_id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "full_name": "Ananya Sharma",
+      "profile_completion": 84,
+      "age": 20,
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "course": "B.Tech",
+      "branch": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "college_name": "JNTUH College of Engineering",
+      "college_type": "Government",
+      "cgpa": 8.85,
+      "percentage": 88.5,
+      "annual_family_income": 180000,
+      "category": "OBC",
+      "gender": "Female",
+      "disability_status": false,
+      "minority_status": false,
+      "rural_urban": "Urban",
+      "previous_scholarship": false,
+      "achievements": "State rank in EAMCET, published tech paper"
+    },
+    {
+      "id": "7c5a2ed4-8afd-4aff-83d0-65e6856f710e",
+      "created_at": "2026-10-06T11:07:02.275Z",
+      "updated_at": "2026-10-06T11:07:02.275Z",
+      "user_id": "98f20cd7-c098-4c98-8d7d-51e4d639f878",
+      "full_name": "User B Hacker",
+      "profile_completion": 10
+    },
+    {
+      "id": "4350d67a-6488-4cbf-a4b8-e82cc28a13e1",
+      "created_at": "2026-10-06T11:09:18.383Z",
+      "updated_at": "2026-10-06T11:09:18.466Z",
+      "user_id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "full_name": "Ananya Sharma",
+      "profile_completion": 84,
+      "age": 20,
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "course": "B.Tech",
+      "branch": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "college_name": "JNTUH College of Engineering",
+      "college_type": "Government",
+      "cgpa": 8.85,
+      "percentage": 88.5,
+      "annual_family_income": 180000,
+      "category": "OBC",
+      "gender": "Female",
+      "disability_status": false,
+      "minority_status": false,
+      "rural_urban": "Urban",
+      "previous_scholarship": false,
+      "achievements": "State rank in EAMCET, published tech paper"
+    },
+    {
+      "id": "9bbe0a1a-ef8b-4182-ab49-c311005e1a44",
+      "created_at": "2026-10-06T11:09:18.564Z",
+      "updated_at": "2026-10-06T11:09:18.564Z",
+      "user_id": "1c080ccb-709c-47ec-8632-d0fe7e8c2dbc",
+      "full_name": "User B Hacker",
+      "profile_completion": 10
+    }
+  ],
+  "scholarships": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "name": "Central Sector Scheme of Scholarships for College and University Students",
+      "provider": "Ministry of Education, Government of India",
+      "description": "Provides financial assistance to meritorious students from low-income families to meet day-to-day expenses while pursuing higher studies in colleges and universities.",
+      "amount": 20000,
+      "course_eligibility": [
+        "All",
+        "B.Tech",
+        "B.Sc",
+        "B.Com",
+        "B.A",
+        "MBBS"
+      ],
+      "minimum_cgpa": 7.5,
+      "maximum_income": 450000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All",
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 25,
+      "required_documents": [
+        "Income Certificate",
+        "Academic Marksheet",
+        "Aadhaar Card",
+        "Bonafide Certificate",
+        "Bank Passbook"
+      ],
+      "deadline": "2026-11-30",
+      "official_url": "https://scholarships.gov.in",
+      "application_method": "National Scholarship Portal (NSP)",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.697Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "name": "Reliance Foundation Undergraduate Scholarship",
+      "provider": "Reliance Foundation",
+      "description": "Supports meritorious undergraduate students across all disciplines with comprehensive grant and mentorship support through their degree programs.",
+      "amount": 200000,
+      "course_eligibility": [
+        "B.Tech",
+        "B.Sc",
+        "B.Com",
+        "B.A",
+        "BBA",
+        "B.Des"
+      ],
+      "minimum_cgpa": 8,
+      "maximum_income": 1500000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 22,
+      "required_documents": [
+        "Class 12 Marksheet",
+        "College ID / Bonafide",
+        "Family Income Certificate",
+        "Aadhaar Card"
+      ],
+      "deadline": "2026-10-25",
+      "official_url": "https://www.scholarships.reliancefoundation.org",
+      "application_method": "Reliance Foundation Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "name": "Adobe India Women-in-Technology Scholarship",
+      "provider": "Adobe Systems India",
+      "description": "Recognizes outstanding female students pursuing degrees in Computer Science, AI, and related Engineering disciplines, aiming to close the gender gap in tech leadership.",
+      "amount": 100000,
+      "course_eligibility": [
+        "B.Tech",
+        "M.Tech",
+        "B.E",
+        "Dual Degree CSE/IT/ECE"
+      ],
+      "minimum_cgpa": 8.5,
+      "maximum_income": 2500000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All"
+      ],
+      "gender_requirement": "Female",
+      "age_requirement": 26,
+      "required_documents": [
+        "Resume",
+        "College Marksheet",
+        "Bonafide Certificate",
+        "Technical Essay",
+        "Recommendation Letter"
+      ],
+      "deadline": "2026-11-15",
+      "official_url": "https://www.adobe.com/in/careers/university/women-in-technology.html",
+      "application_method": "Adobe Careers Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "name": "AICTE Pragati Scholarship Scheme for Girl Students",
+      "provider": "All India Council for Technical Education (AICTE)",
+      "description": "Empowers young women to pursue technical diploma and degree education by providing annual tuition and sustenance grants.",
+      "amount": 50000,
+      "course_eligibility": [
+        "B.Tech",
+        "B.Arch",
+        "B.Pharmacy",
+        "Diploma Engineering"
+      ],
+      "minimum_cgpa": 7,
+      "maximum_income": 800000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All",
+        "General",
+        "OBC",
+        "SC",
+        "ST"
+      ],
+      "gender_requirement": "Female",
+      "age_requirement": 24,
+      "required_documents": [
+        "AICTE College Admission Proof",
+        "Income Certificate",
+        "Caste Certificate",
+        "Academic Marksheet",
+        "Aadhaar Card"
+      ],
+      "deadline": "2026-12-10",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/pragati",
+      "application_method": "National Scholarship Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000005",
+      "name": "ONGC Merit Scholarship for SC/ST and OBC Students",
+      "provider": "ONGC Foundation",
+      "description": "Provides substantial financial support to disadvantaged students enrolled in Engineering, Medical (MBBS), and Masters in Geophysics/Geology or MBA programs.",
+      "amount": 48000,
+      "course_eligibility": [
+        "B.Tech",
+        "MBBS",
+        "MBA",
+        "M.Sc Geophysics"
+      ],
+      "minimum_cgpa": 6.5,
+      "maximum_income": 200000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "SC",
+        "ST",
+        "OBC"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 30,
+      "required_documents": [
+        "Caste Certificate",
+        "Income Certificate",
+        "College Bonafide",
+        "Semester Marksheet",
+        "Bank Passbook"
+      ],
+      "deadline": "2026-11-05",
+      "official_url": "https://www.ongcscholar.org",
+      "application_method": "ONGC Foundation Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000006",
+      "name": "Telangana ePASS Post-Matric Overseas & State Scholarship",
+      "provider": "Government of Telangana Welfare Department",
+      "description": "Comprehensive fee reimbursement and maintenance allowance for SC, ST, BC, and EBC students studying in colleges across Telangana.",
+      "amount": 35000,
+      "course_eligibility": [
+        "B.Tech",
+        "Degree",
+        "B.Pharmacy",
+        "MBA",
+        "MCA",
+        "Medical"
+      ],
+      "minimum_cgpa": 6,
+      "maximum_income": 200000,
+      "eligible_states": [
+        "Telangana"
+      ],
+      "eligible_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "EWS"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 28,
+      "required_documents": [
+        "Telangana Nativity Certificate",
+        "Income Certificate",
+        "Caste Certificate",
+        "Aadhaar Card",
+        "Bonafide Certificate"
+      ],
+      "deadline": "2026-10-31",
+      "official_url": "https://telanganaepass.cgg.gov.in",
+      "application_method": "Telangana ePASS Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000007",
+      "name": "Tata Trust Medical and Healthcare Professional Grant",
+      "provider": "Tata Trusts Education Grants",
+      "description": "Supports undergraduate and postgraduate students enrolled in recognized medical, nursing, and dental institutions in India.",
+      "amount": 75000,
+      "course_eligibility": [
+        "MBBS",
+        "BDS",
+        "B.Sc Nursing",
+        "BAMS",
+        "BHMS"
+      ],
+      "minimum_cgpa": 7.5,
+      "maximum_income": 500000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 27,
+      "required_documents": [
+        "College Fee Receipt",
+        "Annual Family Income Proof",
+        "Yearly Marksheet",
+        "Identity Card",
+        "Statement of Need"
+      ],
+      "deadline": "2026-12-15",
+      "official_url": "https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants",
+      "application_method": "Tata Trusts Grants Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000008",
+      "name": "Kotak Kanya Scholarship for Girl Students",
+      "provider": "Kotak Education Foundation",
+      "description": "Assists talented girls from low-income families in completing professional graduation courses including engineering, architecture, design, and medicine.",
+      "amount": 150000,
+      "course_eligibility": [
+        "B.Tech",
+        "MBBS",
+        "B.Des",
+        "B.Arch",
+        "B.Pharma",
+        "Integrated LLB"
+      ],
+      "minimum_cgpa": 8,
+      "maximum_income": 320000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All"
+      ],
+      "gender_requirement": "Female",
+      "age_requirement": 23,
+      "required_documents": [
+        "Class 12 Marksheet",
+        "Income Certificate",
+        "College Admission Letter",
+        "Aadhaar Card",
+        "Parent ID Proof"
+      ],
+      "deadline": "2026-11-20",
+      "official_url": "https://kotakeducation.org/kotak-kanya-scholarship/",
+      "application_method": "Kotak Education Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000009",
+      "name": "Sitaram Jindal Foundation Educational Scholarship",
+      "provider": "Sitaram Jindal Foundation",
+      "description": "Financial scholarship for needy meritorious students pursuing Diploma, Degree, Technical, and Postgraduate programs.",
+      "amount": 24000,
+      "course_eligibility": [
+        "All",
+        "B.Tech",
+        "B.Sc",
+        "B.Com",
+        "Diploma"
+      ],
+      "minimum_cgpa": 6.5,
+      "maximum_income": 400000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "All"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 25,
+      "required_documents": [
+        "Previous Exam Marksheet",
+        "Income Certificate",
+        "Bonafide Certificate",
+        "Bank Passbook"
+      ],
+      "deadline": "2026-12-31",
+      "official_url": "https://www.sitaramjindalfoundation.org/scholarships.php",
+      "application_method": "Foundation Direct Application",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "name": "Post-Matric Scholarship Scheme for Minorities",
+      "provider": "Ministry of Minority Affairs, Govt of India",
+      "description": "Scholarship scheme encouraging students belonging to minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) to continue higher education.",
+      "amount": 12000,
+      "course_eligibility": [
+        "All",
+        "B.Tech",
+        "Degree",
+        "Medical",
+        "Arts",
+        "Commerce"
+      ],
+      "minimum_cgpa": 5.5,
+      "maximum_income": 250000,
+      "eligible_states": [
+        "All India"
+      ],
+      "eligible_categories": [
+        "Minority"
+      ],
+      "gender_requirement": "All",
+      "age_requirement": 30,
+      "required_documents": [
+        "Minority Community Declaration",
+        "Income Certificate",
+        "Marksheet",
+        "Bank Passbook",
+        "Aadhaar Card"
+      ],
+      "deadline": "2026-10-20",
+      "official_url": "https://scholarships.gov.in",
+      "application_method": "National Scholarship Portal",
+      "verified": true,
+      "status": "ACTIVE",
+      "created_at": "2026-10-06T10:23:41.698Z",
+      "updated_at": "2026-10-06T10:23:41.698Z"
+    }
+  ],
+  "saved_scholarships": [
+    {
+      "id": "e9b5d6dc-31d7-4665-82d3-90aa3a2b5a35",
+      "created_at": "2026-10-06T11:03:18.500Z",
+      "updated_at": "2026-10-06T11:03:18.500Z",
+      "user_id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "6d03fed2-d116-4102-b557-21483f94579d",
+      "created_at": "2026-10-06T11:05:59.008Z",
+      "updated_at": "2026-10-06T11:05:59.008Z",
+      "user_id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "ea8d4748-fbf2-4978-ace1-407a9f23dc78",
+      "created_at": "2026-10-06T11:07:02.166Z",
+      "updated_at": "2026-10-06T11:07:02.166Z",
+      "user_id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "2628e85b-2fd4-4e97-8d6d-4f66f7cd6811",
+      "created_at": "2026-10-06T11:09:18.477Z",
+      "updated_at": "2026-10-06T11:09:18.477Z",
+      "user_id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001"
+    }
+  ],
+  "applications": [
+    {
+      "id": "221f6023-fd0c-4323-a82b-648d6510a05c",
+      "created_at": "2026-10-06T10:26:43.927Z",
+      "updated_at": "2026-10-06T10:26:43.927Z",
+      "user_id": "16f1ac36-88a9-4d35-af68-e9971259a914",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "status": "APPLIED",
+      "notes": "Confidential Notes A",
+      "applied_at": "2026-10-06T10:26:43.927Z"
+    },
+    {
+      "id": "c6e7b0b7-fcc3-448b-a9d9-1a871e3c6f47",
+      "created_at": "2026-10-06T10:27:42.856Z",
+      "updated_at": "2026-10-06T10:27:42.856Z",
+      "user_id": "89c17e42-c184-428a-9b24-4b213e730125",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "status": "APPLIED",
+      "notes": "Confidential Notes A",
+      "applied_at": "2026-10-06T10:27:42.856Z"
+    },
+    {
+      "id": "994500ce-aa57-480f-abd1-e147912b2f5e",
+      "created_at": "2026-10-06T11:03:18.504Z",
+      "updated_at": "2026-10-06T11:03:18.510Z",
+      "user_id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "status": "READY_TO_APPLY",
+      "notes": "All documents verified and ready for portal submission",
+      "applied_at": null
+    },
+    {
+      "id": "facd35e5-bbd1-4c91-8575-1cd6b73f4f0a",
+      "created_at": "2026-10-06T11:05:59.017Z",
+      "updated_at": "2026-10-06T11:05:59.025Z",
+      "user_id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "status": "READY_TO_APPLY",
+      "notes": "All documents verified and ready for portal submission",
+      "applied_at": null
+    },
+    {
+      "id": "50bc12fd-6015-4456-a7c4-a716df7f4190",
+      "created_at": "2026-10-06T11:07:02.172Z",
+      "updated_at": "2026-10-06T11:07:02.185Z",
+      "user_id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "status": "READY_TO_APPLY",
+      "notes": "All documents verified and ready for portal submission",
+      "applied_at": null
+    },
+    {
+      "id": "720a92bb-9d2c-47db-ba04-2fdd79f5a9bb",
+      "created_at": "2026-10-06T11:09:18.483Z",
+      "updated_at": "2026-10-06T11:09:18.489Z",
+      "user_id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "status": "READY_TO_APPLY",
+      "notes": "All documents verified and ready for portal submission",
+      "applied_at": null
+    }
+  ],
+  "documents": [
+    {
+      "id": "dbcedbd1-56e5-426d-be1f-a3d5b10bfc18",
+      "created_at": "2026-10-06T16:34:52.725Z",
+      "updated_at": "2026-10-06T16:34:56.847Z",
+      "user_id": "34017ecf-c8fc-49f6-9bf1-1ce01d672295",
+      "application_id": null,
+      "document_name": "aadhar.pdf",
+      "document_type": "Aadhaar / National ID",
+      "storage_path": "C:\\Users\\Varshini\\OneDrive\\Desktop\\ScholarNest\\backend\\uploads\\1791304492368-242100615-aadhar.pdf",
+      "verification_status": "Ready",
+      "ai_analysis": "{\"documentType\":\"Aadhaar / National ID\",\"isReadable\":true,\"containsRequiredInformation\":true,\"issues\":[],\"status\":\"Ready\",\"analysisSummary\":\"Document format verified for Aadhaar / National ID. File successfully archived in private storage.\"}"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "bcde8039-1d75-4156-93ba-21519175aadb",
+      "created_at": "2026-10-06T10:24:38.112Z",
+      "updated_at": "2026-10-06T10:24:38.112Z",
+      "user_id": "bc199144-523b-4d95-a456-5a6f3c92b920",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "37d794f1-9fa5-4e6e-adee-5da0496f3f60",
+      "created_at": "2026-10-06T10:25:49.680Z",
+      "updated_at": "2026-10-06T10:25:49.680Z",
+      "user_id": "e4396493-ce19-41ba-bdd1-b145b630dc40",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "f9d61d40-a70c-4b9b-ad36-f5fb96d8b697",
+      "created_at": "2026-10-06T10:26:43.840Z",
+      "updated_at": "2026-10-06T10:26:43.840Z",
+      "user_id": "16f1ac36-88a9-4d35-af68-e9971259a914",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "30228228-4851-4e01-a874-2a5583086488",
+      "created_at": "2026-10-06T10:26:43.922Z",
+      "updated_at": "2026-10-06T10:26:43.922Z",
+      "user_id": "68dfd023-5eed-4c94-b042-34c963fd0021",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "e95f9a72-9830-4c0a-b236-8094cbb9189e",
+      "created_at": "2026-10-06T10:26:43.929Z",
+      "updated_at": "2026-10-06T10:26:43.929Z",
+      "user_id": "16f1ac36-88a9-4d35-af68-e9971259a914",
+      "title": "Application Tracked",
+      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status APPLIED.",
+      "type": "APPLICATION"
+    },
+    {
+      "id": "db0bbc7c-15d3-4f7f-8ab7-ca3f5bdf3e46",
+      "created_at": "2026-10-06T10:27:42.760Z",
+      "updated_at": "2026-10-06T10:27:42.760Z",
+      "user_id": "89c17e42-c184-428a-9b24-4b213e730125",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "52e0d29f-f49f-4a46-9b73-475881e0cf4c",
+      "created_at": "2026-10-06T10:27:42.848Z",
+      "updated_at": "2026-10-06T10:27:42.848Z",
+      "user_id": "00f0640c-ddc3-4a4f-9598-b6d66e9ef688",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "9f45d7aa-73cf-4a2a-a6ab-96ad07f52053",
+      "created_at": "2026-10-06T10:27:42.859Z",
+      "updated_at": "2026-10-06T10:27:42.859Z",
+      "user_id": "89c17e42-c184-428a-9b24-4b213e730125",
+      "title": "Application Tracked",
+      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status APPLIED.",
+      "type": "APPLICATION"
+    },
+    {
+      "id": "1bef9c08-2991-4d14-8341-3cf97263e985",
+      "created_at": "2026-10-06T10:59:11.731Z",
+      "updated_at": "2026-10-06T10:59:11.731Z",
+      "user_id": "34017ecf-c8fc-49f6-9bf1-1ce01d672295",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "56805729-0ffe-4fdd-8bf3-bf0a5bae9aee",
+      "created_at": "2026-10-06T11:03:18.397Z",
+      "updated_at": "2026-10-06T11:03:18.397Z",
+      "user_id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "d5f4ca80-cede-48de-a866-ac752ad61a06",
+      "created_at": "2026-10-06T11:03:18.506Z",
+      "updated_at": "2026-10-06T11:03:18.506Z",
+      "user_id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "title": "Application Tracked",
+      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status DOCUMENTS_PREPARING.",
+      "type": "APPLICATION"
+    },
+    {
+      "id": "7e87a33d-a929-466f-b567-ed0778382262",
+      "created_at": "2026-10-06T11:03:18.588Z",
+      "updated_at": "2026-10-06T11:03:18.588Z",
+      "user_id": "d4d2fb92-968a-421b-b1e6-074709cc2e71",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "d8311b0b-26f1-47b6-8701-7181680c0f5b",
+      "created_at": "2026-10-06T11:05:58.888Z",
+      "updated_at": "2026-10-06T11:05:58.888Z",
+      "user_id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "e40f6f75-40a4-42af-893a-7bf06c5bb445",
+      "created_at": "2026-10-06T11:05:59.019Z",
+      "updated_at": "2026-10-06T11:05:59.019Z",
+      "user_id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "title": "Application Tracked",
+      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status DOCUMENTS_PREPARING.",
+      "type": "APPLICATION"
+    },
+    {
+      "id": "46c68cff-7a07-4395-ac1c-1134c6e87866",
+      "created_at": "2026-10-06T11:07:02.053Z",
+      "updated_at": "2026-10-06T11:07:02.053Z",
+      "user_id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "e037e7d4-0e8d-4434-ab92-b87311926802",
+      "created_at": "2026-10-06T11:07:02.177Z",
+      "updated_at": "2026-10-06T11:07:02.177Z",
+      "user_id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "title": "Application Tracked",
+      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status DOCUMENTS_PREPARING.",
+      "type": "APPLICATION"
+    },
+    {
+      "id": "31c01ce6-1808-4668-bbb8-af592163b25c",
+      "created_at": "2026-10-06T11:07:02.276Z",
+      "updated_at": "2026-10-06T11:07:02.276Z",
+      "user_id": "98f20cd7-c098-4c98-8d7d-51e4d639f878",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "4a7b8de3-bd35-48ed-9946-333171db1d02",
+      "created_at": "2026-10-06T11:09:18.385Z",
+      "updated_at": "2026-10-06T11:09:18.385Z",
+      "user_id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "e6d7cf39-c251-457f-83a9-88b34283da99",
+      "created_at": "2026-10-06T11:09:18.485Z",
+      "updated_at": "2026-10-06T11:09:18.485Z",
+      "user_id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "title": "Application Tracked",
+      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status DOCUMENTS_PREPARING.",
+      "type": "APPLICATION"
+    },
+    {
+      "id": "f3e58b4d-1afc-4d83-95ca-cf61c437c6a4",
+      "created_at": "2026-10-06T11:09:18.565Z",
+      "updated_at": "2026-10-06T11:09:18.565Z",
+      "user_id": "1c080ccb-709c-47ec-8632-d0fe7e8c2dbc",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    }
+  ],
+  "ai_outputs": [
+    {
+      "id": "8cd280ff-ecdc-411c-a370-93f642dc5b9e",
+      "created_at": "2026-10-06T10:25:49.741Z",
+      "updated_at": "2026-10-06T10:25:49.741Z",
+      "user_id": "e4396493-ce19-41ba-bdd1-b145b630dc40",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "type": "d98416002a9ab70b257749637a0f8c0c34f0241e41cf6489a0dbaec42ea10961",
+      "input_hash": "{\"summary\":\"You have a strong match of 99% for Central Sector Scheme of Scholarships for College and University Students from Ministry of Education, Government of India.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Academic CGPA of 8.80 satisfies the required minimum of 7.50\",\"Family income of INR 1,80,000 is within the limit of INR 4,50,000\",\"Open to all degree streams and courses\",\"Nationwide eligibility across all states and union territories\",\"Open to all student social and reservation categories\",\"Open to all genders\",\"Age 20 is within maximum limit of 25\"],\"gapsOrActions\":[\"Keep your income and institution certificates updated.\"],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Prepare your verified documents in advance and submit your application well before the deadline.\"}",
+      "output_json": null
+    },
+    {
+      "id": "814ad7a5-c2ea-4aed-89f8-d39f71623893",
+      "created_at": "2026-10-06T11:03:18.493Z",
+      "updated_at": "2026-10-06T11:03:18.493Z",
+      "user_id": "3024ec83-2c94-4fa7-bf24-823f3057aea8",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "type": "715a7094c599e655e4ae5b026dcb2df5df0c2d90854b28a2e7bc0a2313bd2a87",
+      "input_hash": "{\"summary\":\"You have a strong match of 99% for Central Sector Scheme of Scholarships for College and University Students from Ministry of Education, Government of India.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Academic CGPA of 8.85 satisfies the required minimum of 7.50\",\"Family income of INR 1,80,000 is within the limit of INR 4,50,000\",\"Open to all degree streams and courses\",\"Nationwide eligibility across all states and union territories\",\"Open to all student social and reservation categories\",\"Open to all genders\",\"Age 20 is within maximum limit of 25\"],\"gapsOrActions\":[\"Keep your income and institution certificates updated.\"],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Prepare your verified documents in advance and submit your application well before the deadline.\"}",
+      "output_json": null
+    },
+    {
+      "id": "34358abe-a219-4664-af93-adfa4eeaf3f9",
+      "created_at": "2026-10-06T11:05:58.994Z",
+      "updated_at": "2026-10-06T11:05:58.994Z",
+      "user_id": "b148b60c-6db8-44ec-987a-b841a7246d01",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "type": "7081650a19273b4f6a1f7cc2a118bc4f75247dbcb0839699b34d4b9734e279ba",
+      "input_hash": "{\"summary\":\"You have a strong match of 99% for Central Sector Scheme of Scholarships for College and University Students from Ministry of Education, Government of India.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Academic CGPA of 8.85 satisfies the required minimum of 7.50\",\"Family income of INR 1,80,000 is within the limit of INR 4,50,000\",\"Open to all degree streams and courses\",\"Nationwide eligibility across all states and union territories\",\"Open to all student social and reservation categories\",\"Open to all genders\",\"Age 20 is within maximum limit of 25\"],\"gapsOrActions\":[\"Keep your income and institution certificates updated.\"],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Prepare your verified documents in advance and submit your application well before the deadline.\"}",
+      "output_json": null
+    },
+    {
+      "id": "cb8d7a83-4416-4fc0-8ec4-f670abefe4c6",
+      "created_at": "2026-10-06T11:07:02.155Z",
+      "updated_at": "2026-10-06T11:07:02.155Z",
+      "user_id": "e972a27b-ae54-4c78-a284-c2cd841bae2f",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "type": "0c0c87c39c36daeae7d1b9657cef3801a3e4e494686740fd2bf550256939797e",
+      "input_hash": "{\"summary\":\"You have a strong match of 99% for Central Sector Scheme of Scholarships for College and University Students from Ministry of Education, Government of India.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Academic CGPA of 8.85 satisfies the required minimum of 7.50\",\"Family income of INR 1,80,000 is within the limit of INR 4,50,000\",\"Open to all degree streams and courses\",\"Nationwide eligibility across all states and union territories\",\"Open to all student social and reservation categories\",\"Open to all genders\",\"Age 20 is within maximum limit of 25\"],\"gapsOrActions\":[\"Keep your income and institution certificates updated.\"],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Prepare your verified documents in advance and submit your application well before the deadline.\"}",
+      "output_json": null
+    },
+    {
+      "id": "3b0daec0-e5b2-47b7-a940-41501cb37b41",
+      "created_at": "2026-10-06T11:09:18.471Z",
+      "updated_at": "2026-10-06T11:09:18.471Z",
+      "user_id": "40fdcaca-b209-4749-8caa-066e03e98680",
+      "scholarship_id": "00000000-0000-0000-0000-000000000001",
+      "type": "30ebf584dc1bf74733e5530489b3ed35feb4f6a07621d42ba214c6b5c0b2371b",
+      "input_hash": "{\"summary\":\"You have a strong match of 99% for Central Sector Scheme of Scholarships for College and University Students from Ministry of Education, Government of India.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Academic CGPA of 8.85 satisfies the required minimum of 7.50\",\"Family income of INR 1,80,000 is within the limit of INR 4,50,000\",\"Open to all degree streams and courses\",\"Nationwide eligibility across all states and union territories\",\"Open to all student social and reservation categories\",\"Open to all genders\",\"Age 20 is within maximum limit of 25\"],\"gapsOrActions\":[\"Keep your income and institution certificates updated.\"],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Prepare your verified documents in advance and submit your application well before the deadline.\"}",
+      "output_json": null
+    }
+  ]
+}

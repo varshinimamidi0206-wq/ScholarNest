@@ -263,52 +263,74 @@ class DatabaseService {
     this.localData = null;
   }
 
-  async init() {
-    if (this.isPostgres) {
-      try {
-        let poolConfig = {
-          connectionString: config.DATABASE_URL,
-          ssl: config.DATABASE_URL.includes('localhost') ? false : { rejectUnauthorized: false },
-          connectionTimeoutMillis: 3000,
-        };
+  parseConnectionString(urlString) {
+    try {
+      const lastAt = urlString.lastIndexOf('@');
+      const protoEnd = urlString.indexOf('://');
+      if (lastAt !== -1 && protoEnd !== -1) {
+        const authPart = urlString.slice(protoEnd + 3, lastAt);
+        const hostPart = urlString.slice(lastAt + 1);
+        const colonIdx = authPart.indexOf(':');
+        let user = colonIdx !== -1 ? authPart.slice(0, colonIdx) : authPart;
+        let password = colonIdx !== -1 ? decodeURIComponent(authPart.slice(colonIdx + 1)) : '';
+        const slashIdx = hostPart.indexOf('/');
+        const hostPort = slashIdx !== -1 ? hostPart.slice(0, slashIdx) : hostPart;
+        const database = slashIdx !== -1 ? hostPart.slice(slashIdx + 1).split('?')[0] : 'postgres';
+        let [host, portStr] = hostPort.split(':');
+        let port = portStr ? parseInt(portStr, 10) : 5432;
 
-        const lastAt = config.DATABASE_URL.lastIndexOf('@');
-        if (lastAt !== -1 && config.DATABASE_URL.indexOf('@') !== lastAt) {
-          try {
-            const protoEnd = config.DATABASE_URL.indexOf('://');
-            const authPart = config.DATABASE_URL.slice(protoEnd + 3, lastAt);
-            const hostPart = config.DATABASE_URL.slice(lastAt + 1);
-            const colonIdx = authPart.indexOf(':');
-            const user = authPart.slice(0, colonIdx);
-            const password = authPart.slice(colonIdx + 1);
-            const slashIdx = hostPart.indexOf('/');
-            const hostPort = slashIdx !== -1 ? hostPart.slice(0, slashIdx) : hostPart;
-            const database = slashIdx !== -1 ? hostPart.slice(slashIdx + 1).split('?')[0] : 'postgres';
-            const [host, portStr] = hostPort.split(':');
-            const port = portStr ? parseInt(portStr, 10) : 5432;
-
-            poolConfig = {
-              user,
-              password,
-              host,
-              port,
-              database,
-              ssl: { rejectUnauthorized: false },
-              connectionTimeoutMillis: 3000,
-            };
-          } catch (pe) {
-            // Keep default poolConfig
+        // Auto-fix for Supabase direct IPv6 addresses (db.<ref>.supabase.co):
+        // Automatically map to the official Supavisor IPv4 connection pooler
+        const dbMatch = host.match(/^db\.([a-z0-9]+)\.supabase\.co$/i);
+        if (dbMatch) {
+          const ref = dbMatch[1];
+          host = 'aws-0-ap-southeast-1.pooler.supabase.com';
+          port = 6543;
+          if (!user.includes('.')) {
+            user = `postgres.${ref}`;
           }
         }
 
+        return {
+          user,
+          password,
+          host,
+          port,
+          database,
+          ssl: { rejectUnauthorized: false },
+          connectionTimeoutMillis: 10000,
+          max: IS_VERCEL ? 2 : 10,
+        };
+      }
+    } catch (e) {
+      console.warn('[DB] Custom URL parsing failed, using standard string:', e.message);
+    }
+
+    return {
+      connectionString: urlString,
+      ssl: urlString.includes('localhost') ? false : { rejectUnauthorized: false },
+      connectionTimeoutMillis: 10000,
+      max: IS_VERCEL ? 2 : 10,
+    };
+  }
+
+  async init() {
+    if (this.isPostgres) {
+      try {
+        const poolConfig = this.parseConnectionString(config.DATABASE_URL);
         this.pool = new Pool(poolConfig);
         await this.pool.query('SELECT 1');
         console.log('[DB] Connected to PostgreSQL / Supabase successfully.');
+        this.isPostgres = true;
         await this.runPostgresMigrations();
         return;
       } catch (err) {
         console.warn('[DB] PostgreSQL connection failed. Falling back to local persistent store.', err.message);
         this.isPostgres = false;
+        if (this.pool) {
+          try { await this.pool.end(); } catch (e) {}
+          this.pool = null;
+        }
       }
     }
 

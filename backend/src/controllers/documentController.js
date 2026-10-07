@@ -9,9 +9,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Secure private storage directory (NOT exposed via public static route)
-const UPLOAD_DIR = path.resolve(__dirname, '../../uploads');
-if (!fs.existsSync(UPLOAD_DIR)) {
-  fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const UPLOAD_DIR = IS_VERCEL ? '/tmp/uploads' : path.resolve(__dirname, '../../uploads');
+try {
+  if (!fs.existsSync(UPLOAD_DIR)) {
+    fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+  }
+} catch (e) {
+  // Read-only filesystem fallback
 }
 
 // Multer storage configuration

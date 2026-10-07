@@ -54,36 +54,54 @@ This guide details how to deploy ScholarNest to production using **Supabase Post
 
 ---
 
-## 3. Frontend Deployment: Vercel
+## 3. Deployment: Vercel
+
+ScholarNest supports two production architectures:
+
+### Option A: Unified Full-Stack Deployment on Vercel (Recommended)
+Both the Vite frontend SPA and the Express API endpoints (`/api/*`) run directly on Vercel as serverless functions with zero external server dependencies:
 
 1. **Import Project to Vercel:**
-   - Go to the [Vercel Dashboard](https://vercel.com) &rarr; **Add New Project**.
-   - Select your ScholarNest repository.
-   - Configure build settings:
-     - **Framework Preset:** `Vite`
-     - **Root Directory:** `frontend`
+   - Go to [Vercel Dashboard](https://vercel.com) &rarr; **Add New Project**.
+   - Select your ScholarNest repository (`varshinimamidi0206-wq/ScholarNest`).
+   - If Root Directory is `frontend`:
      - **Build Command:** `npm run build`
      - **Output Directory:** `dist`
+   - If Root Directory is root (`.`):
+     - Automatically detected by root `vercel.json`.
 
 2. **Configure Environment Variables on Vercel:**
-   Under **Environment Variables**, add:
+   In **Project Settings &rarr; Environment Variables**, add:
    ```env
-   VITE_API_URL=https://scholarnest-api.onrender.com/api
+   NODE_ENV=production
+   JWT_SECRET=your_production_jwt_secret_key
+   JWT_EXPIRES_IN=7d
+   DATABASE_URL=your_supabase_postgresql_connection_string
+   SUPABASE_URL=https://[YOUR-PROJECT-REF].supabase.co
+   SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
+   SUPABASE_SECRET_KEY=sb_secret_...
+   GEMINI_API_KEY=your_gemini_api_key
+   CLIENT_URL=https://my-scholar-nest.vercel.app
    ```
 
-3. **Single-Page Application (SPA) Routing Configuration:**
-   Create a `vercel.json` file inside `frontend/` (already pre-configured) to handle React Router client rewrites:
+3. **Routing Configuration (`vercel.json`):**
+   Pre-configured to route API requests to `/api/index.js` while serving frontend client-side routes via `/index.html`:
    ```json
    {
      "rewrites": [
+       { "source": "/api/(.*)", "destination": "/api/index.js" },
        { "source": "/(.*)", "destination": "/index.html" }
      ]
    }
    ```
 
-4. **Deploy:**
-   - Click **Deploy**.
-   - Test navigation across all pages (`/dashboard`, `/scholarships`, `/profile`, `/applications`).
+### Option B: Separate Backend (e.g. Render / Railway)
+If you deploy the Express server separately on Render/Railway:
+1. Under Vercel Environment Variables, add:
+   ```env
+   VITE_API_URL=https://your-backend-service.onrender.com/api
+   ```
+2. The frontend Axios client automatically routes all API calls to your external server.
 
 ---
 

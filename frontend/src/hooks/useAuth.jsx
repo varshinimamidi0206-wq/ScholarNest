@@ -43,29 +43,39 @@ export function AuthProvider({ children }) {
   }, [fetchCurrentUser]);
 
   const login = async (email, password) => {
-    const res = await authAPI.login({ email, password });
-    if (res.data.success) {
-      setToken(res.data.token);
-      setUser(res.data.user);
-      localStorage.setItem('scholarnest_token', res.data.token);
-      localStorage.setItem('scholarnest_user', JSON.stringify(res.data.user));
-      await fetchCurrentUser();
-      return res.data;
+    try {
+      const res = await authAPI.login({ email, password });
+      if (res.data?.success) {
+        setToken(res.data.token);
+        setUser(res.data.user);
+        localStorage.setItem('scholarnest_token', res.data.token);
+        localStorage.setItem('scholarnest_user', JSON.stringify(res.data.user));
+        await fetchCurrentUser();
+        return res.data;
+      }
+      throw new Error(res.data?.message || 'Login failed');
+    } catch (err) {
+      const msg = err.response?.data?.message || err.message || 'Login failed';
+      throw new Error(msg);
     }
-    throw new Error(res.data.message || 'Login failed');
   };
 
   const register = async (name, email, password) => {
-    const res = await authAPI.register({ name, email, password });
-    if (res.data.success) {
-      setToken(res.data.token);
-      setUser(res.data.user);
-      localStorage.setItem('scholarnest_token', res.data.token);
-      localStorage.setItem('scholarnest_user', JSON.stringify(res.data.user));
-      await fetchCurrentUser();
-      return res.data;
+    try {
+      const res = await authAPI.register({ name, email, password });
+      if (res.data?.success) {
+        setToken(res.data.token);
+        setUser(res.data.user);
+        localStorage.setItem('scholarnest_token', res.data.token);
+        localStorage.setItem('scholarnest_user', JSON.stringify(res.data.user));
+        await fetchCurrentUser();
+        return res.data;
+      }
+      throw new Error(res.data?.message || 'Registration failed');
+    } catch (err) {
+      const msg = err.response?.data?.message || err.message || 'Registration failed';
+      throw new Error(msg);
     }
-    throw new Error(res.data.message || 'Registration failed');
   };
 
   const logout = () => {

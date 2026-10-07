@@ -145,28 +145,20 @@
       "password_hash": "$2b$10$yKXJT0KW0ev4UwTTp72g2O3WnZSqfm7.qw2jy1.SCsVgN7ZpdW3uK"
     },
     {
-      "id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
-      "created_at": "2026-10-07T06:46:29.036Z",
-      "updated_at": "2026-10-07T06:46:29.036Z",
-      "name": "Ananya Sharma",
-      "email": "ananya_1791355588956@test.edu",
-      "password_hash": "$2b$10$bT2QlKwmd8GmHFZXHQNbxuvui5sI2j838Wb.Ge6EX74yFFiMp1grG"
+      "id": "2e6dbbd2-4f1f-47ec-b7e3-192298935a04",
+      "created_at": "2026-10-07T06:43:06.526Z",
+      "updated_at": "2026-10-07T06:43:06.526Z",
+      "name": "Serverless Test",
+      "email": "test_serverless_1791355385853@example.com",
+      "password_hash": "$2b$10$PG74GsaCHu/uSH55FtgzZOT/RvzM/vi9mrdBD8rebEfnLXgXm8lhi"
     },
     {
-      "id": "1217b980-4900-4cfe-bc03-b7ee937f2027",
-      "created_at": "2026-10-07T06:46:47.928Z",
-      "updated_at": "2026-10-07T06:46:47.928Z",
-      "name": "User B Hacker",
-      "email": "userb_1791355607860@test.edu",
-      "password_hash": "$2b$10$SSVgQsyrRqsk1XyyVZKoe.KO7kR2t8XSQLCXtCAXAHTd8PPhMsYam"
-    },
-    {
-      "id": "98b77cc3-ae1c-43e2-9f1b-ea0e8a125a8c",
-      "created_at": "2026-10-07T06:47:07.512Z",
-      "updated_at": "2026-10-07T06:47:07.512Z",
-      "name": "Proxy Test",
-      "email": "proxy_test_1791355627398@example.com",
-      "password_hash": "$2b$10$LUiJslsJf6xoIbusKEqUcu8/YDLhe1Fsg8a0h.PysCXzX/1vcvRfW"
+      "id": "504ce05e-8578-4023-956c-94b5881c185b",
+      "created_at": "2026-10-07T06:43:32.553Z",
+      "updated_at": "2026-10-07T06:43:32.553Z",
+      "name": "Login Test",
+      "email": "login_test_1791355410462@example.com",
+      "password_hash": "$2b$10$o15KNXamhC9KgoqoMc6M7eQksZDXZ.zRFCpaq8HJAfnW4zvXbOwOu"
     }
   ],
   "students": [
@@ -459,45 +451,19 @@
       "profile_completion": 10
     },
     {
-      "id": "f2d53ab3-fd1f-492a-9aa0-678684efcdc6",
-      "created_at": "2026-10-07T06:46:29.037Z",
-      "updated_at": "2026-10-07T06:46:29.117Z",
-      "user_id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
-      "full_name": "Ananya Sharma",
-      "profile_completion": 84,
-      "age": 20,
-      "state": "Telangana",
-      "district": "Hyderabad",
-      "course": "B.Tech",
-      "branch": "Computer Science & Engineering",
-      "year": "3rd Year",
-      "college_name": "JNTUH College of Engineering",
-      "college_type": "Government",
-      "cgpa": 8.85,
-      "percentage": 88.5,
-      "annual_family_income": 180000,
-      "category": "OBC",
-      "gender": "Female",
-      "disability_status": false,
-      "minority_status": false,
-      "rural_urban": "Urban",
-      "previous_scholarship": false,
-      "achievements": "State rank in EAMCET, published tech paper"
-    },
-    {
-      "id": "1a69ed06-07e3-4059-a7b0-bf32097a39c8",
-      "created_at": "2026-10-07T06:46:47.930Z",
-      "updated_at": "2026-10-07T06:46:47.930Z",
-      "user_id": "1217b980-4900-4cfe-bc03-b7ee937f2027",
-      "full_name": "User B Hacker",
+      "id": "a4989aeb-1ac0-402f-8f01-7526f3c9a1b7",
+      "created_at": "2026-10-07T06:43:06.528Z",
+      "updated_at": "2026-10-07T06:43:06.528Z",
+      "user_id": "2e6dbbd2-4f1f-47ec-b7e3-192298935a04",
+      "full_name": "Serverless Test",
       "profile_completion": 10
     },
     {
-      "id": "8ecab9e1-f8d4-4110-8954-b5d05a6ad023",
-      "created_at": "2026-10-07T06:47:07.514Z",
-      "updated_at": "2026-10-07T06:47:07.514Z",
-      "user_id": "98b77cc3-ae1c-43e2-9f1b-ea0e8a125a8c",
-      "full_name": "Proxy Test",
+      "id": "a3e79fa2-945e-44aa-bfc3-4047599541da",
+      "created_at": "2026-10-07T06:43:32.555Z",
+      "updated_at": "2026-10-07T06:43:32.555Z",
+      "user_id": "504ce05e-8578-4023-956c-94b5881c185b",
+      "full_name": "Login Test",
       "profile_completion": 10
     }
   ],
@@ -939,13 +905,6 @@
       "updated_at": "2026-10-07T05:02:55.284Z",
       "user_id": "735635f5-177e-42f2-b590-86b37ca514b1",
       "scholarship_id": "00000000-0000-0000-0000-000000000001"
-    },
-    {
-      "id": "51a6ea39-97f4-48cd-898d-6fd95440633d",
-      "created_at": "2026-10-07T06:46:47.832Z",
-      "updated_at": "2026-10-07T06:46:47.832Z",
-      "user_id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
-      "scholarship_id": "00000000-0000-0000-0000-000000000001"
     }
   ],
   "applications": [
@@ -1024,16 +983,6 @@
       "created_at": "2026-10-07T05:02:55.289Z",
       "updated_at": "2026-10-07T05:02:55.294Z",
       "user_id": "735635f5-177e-42f2-b590-86b37ca514b1",
-      "scholarship_id": "00000000-0000-0000-0000-000000000001",
-      "status": "READY_TO_APPLY",
-      "notes": "All documents verified and ready for portal submission",
-      "applied_at": null
-    },
-    {
-      "id": "05aafb46-608b-4ceb-8ee1-1b6373721d72",
-      "created_at": "2026-10-07T06:46:47.846Z",
-      "updated_at": "2026-10-07T06:46:47.856Z",
-      "user_id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
       "scholarship_id": "00000000-0000-0000-0000-000000000001",
       "status": "READY_TO_APPLY",
       "notes": "All documents verified and ready for portal submission",
@@ -1290,37 +1239,19 @@
       "type": "PROFILE"
     },
     {
-      "id": "62db9acc-071a-480e-82c1-8880a0a7ef36",
-      "created_at": "2026-10-07T06:46:29.038Z",
-      "updated_at": "2026-10-07T06:46:29.038Z",
-      "user_id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
+      "id": "30cb0116-0e42-48ab-b2d1-cd636e7af95d",
+      "created_at": "2026-10-07T06:43:06.529Z",
+      "updated_at": "2026-10-07T06:43:06.529Z",
+      "user_id": "2e6dbbd2-4f1f-47ec-b7e3-192298935a04",
       "title": "Welcome to ScholarNest!",
       "message": "Complete your academic and family profile to discover personalized scholarships.",
       "type": "PROFILE"
     },
     {
-      "id": "d746a8d8-fb6a-4797-b845-4e07c46255bd",
-      "created_at": "2026-10-07T06:46:47.849Z",
-      "updated_at": "2026-10-07T06:46:47.849Z",
-      "user_id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
-      "title": "Application Tracked",
-      "message": "Started tracking application for Central Sector Scheme of Scholarships for College and University Students with status DOCUMENTS_PREPARING.",
-      "type": "APPLICATION"
-    },
-    {
-      "id": "5ca9d235-7acf-47ab-ad57-1c9f4c9ed59d",
-      "created_at": "2026-10-07T06:46:47.931Z",
-      "updated_at": "2026-10-07T06:46:47.931Z",
-      "user_id": "1217b980-4900-4cfe-bc03-b7ee937f2027",
-      "title": "Welcome to ScholarNest!",
-      "message": "Complete your academic and family profile to discover personalized scholarships.",
-      "type": "PROFILE"
-    },
-    {
-      "id": "7d18a3c4-0c0e-4d91-b93e-240e5f3a0aa3",
-      "created_at": "2026-10-07T06:47:07.515Z",
-      "updated_at": "2026-10-07T06:47:07.515Z",
-      "user_id": "98b77cc3-ae1c-43e2-9f1b-ea0e8a125a8c",
+      "id": "308f564f-876a-4238-9735-fe871853eb9b",
+      "created_at": "2026-10-07T06:43:32.556Z",
+      "updated_at": "2026-10-07T06:43:32.556Z",
+      "user_id": "504ce05e-8578-4023-956c-94b5881c185b",
       "title": "Welcome to ScholarNest!",
       "message": "Complete your academic and family profile to discover personalized scholarships.",
       "type": "PROFILE"
@@ -1395,16 +1326,6 @@
       "scholarship_id": "00000000-0000-0000-0000-000000000001",
       "type": "cf96793eeeedef697d614619ecc115411d90a34af0ec7dc0603be7f403942456",
       "input_hash": "{\"summary\":\"You have a strong match of 99% for Central Sector Scheme of Scholarships for College and University Students from Ministry of Education, Government of India.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Academic CGPA of 8.85 satisfies the required minimum of 7.50\",\"Family income of INR 1,80,000 is within the limit of INR 4,50,000\",\"Open to all degree streams and courses\",\"Nationwide eligibility across all states and union territories\",\"Open to all student social and reservation categories\",\"Open to all genders\",\"Age 20 is within maximum limit of 25\"],\"gapsOrActions\":[\"Keep your income and institution certificates updated.\"],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Prepare your verified documents in advance and submit your application well before the deadline.\"}",
-      "output_json": null
-    },
-    {
-      "id": "518071e6-4c8c-41da-b7db-d0aab990da96",
-      "created_at": "2026-10-07T06:46:39.236Z",
-      "updated_at": "2026-10-07T06:46:39.236Z",
-      "user_id": "fd62c1ff-874c-40b4-a8ab-12ce1131d4bb",
-      "scholarship_id": "00000000-0000-0000-0000-000000000001",
-      "type": "a3691278bf4575b0ff7de9134b01012a0dcb5f6ef476dc370317e34505be4e99",
-      "input_hash": "{\"summary\":\"Ananya, you have an excellent match for the 'Central Sector Scheme of Scholarships for College and University Students' with a near-perfect score. You meet all the critical eligibility criteria, making you a very strong candidate for this scholarship.\",\"matchScore\":99,\"eligible\":true,\"keyStrengths\":[\"Your Academic CGPA of 8.85 significantly surpasses the required minimum of 7.50.\",\"Your family's annual income of INR 1,80,000 is well within the scholarship's maximum limit of INR 4,50,000.\",\"The scholarship is open to students from all degree streams and courses, including your B.Tech (Computer Science & Engineering).\",\"Eligibility is nationwide, covering all states and union territories, including Telangana.\",\"The scheme is open to all student social and reservation categories, including OBC.\",\"The scholarship is open to all genders.\",\"Your age (assuming within typical 3rd-year range) falls within the acceptable limit (e.g., Age 20 is within maximum limit of 25).\"],\"gapsOrActions\":[],\"documentChecklist\":[\"Income Certificate\",\"Academic Marksheet\",\"Aadhaar Card\",\"Bonafide Certificate\",\"Bank Passbook\"],\"actionableAdvice\":\"Ananya, with a 99/100 match score, you are exceptionally well-positioned for this scholarship. Your next immediate steps should be to gather all the required documents as listed above. Ensure each document is valid and up-to-date. Visit the official scholarship portal promptly to check the application deadline and the exact procedure for submission. Do not delay, as high-scoring matches still require timely application.\"}",
       "output_json": null
     }
   ]

@@ -15,6 +15,8 @@ if (config.GEMINI_API_KEY) {
   console.log('[AI] No GEMINI_API_KEY provided. Intelligent fallback assistant active.');
 }
 
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+
 function getHash(input) {
   return crypto.createHash('sha256').update(JSON.stringify(input)).digest('hex');
 }
@@ -88,7 +90,7 @@ Respond strictly with valid JSON conforming to this structure:
 
   if (genAI) {
     try {
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
       const resp = await model.generateContent(prompt);
       const text = resp.response.text();
       const cleaned = text.replace(/```json/g, '').replace(/```/g, '').trim();
@@ -169,7 +171,7 @@ ${scholarshipContext ? `Active Scholarship Being Viewed:
   if (genAI) {
     try {
       const model = genAI.getGenerativeModel({
-        model: 'gemini-1.5-flash',
+        model: GEMINI_MODEL,
         systemInstruction: { parts: [{ text: systemInstruction }] },
       });
 
@@ -251,7 +253,7 @@ Status must be one of: "Ready", "Needs Attention", "Under Review".
 
   if (genAI && extractedText) {
     try {
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
       const resp = await model.generateContent(prompt);
       const text = resp.response.text();
       const cleaned = text.replace(/```json/g, '').replace(/```/g, '').trim();

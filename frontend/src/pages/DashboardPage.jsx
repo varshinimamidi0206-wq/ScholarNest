@@ -70,9 +70,24 @@ export default function DashboardPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-fade-in">
       
       {/* 1. Welcome Banner */}
-      <div className="bg-gradient-to-r from-sky-900 via-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-xl shadow-slate-900/10">
+      <div className="relative text-white rounded-3xl p-6 sm:p-8 overflow-hidden shadow-xl shadow-slate-900/10 bg-slate-950">
+        {/* Background Image Container */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-cover bg-[position:80%_center] sm:bg-center pointer-events-none"
+          style={{
+            backgroundImage: `url('/assets/scholarnest-dashboard-hero.png')`,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Subtle Dark Blue Gradient Overlay: darker on the left for crisp text contrast, transparent toward right so laptop/workspace area remains clearly visible */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-sky-950/50 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
         <div className="max-w-2xl relative z-10 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-semibold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-semibold backdrop-blur-xs">
             <GraduationCap className="w-3.5 h-3.5" />
             <span>ScholarNest Student Hub</span>
           </div>
@@ -98,7 +113,7 @@ export default function DashboardPage() {
 
             <Link
               to="/profile"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-white text-xs sm:text-sm font-semibold rounded-xl border border-slate-700 transition-all"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-white text-xs sm:text-sm font-semibold rounded-xl border border-slate-700 transition-all backdrop-blur-xs"
             >
               <span>Update Profile ({profileComp}%)</span>
               <ChevronRight className="w-4 h-4 text-slate-400" />
@@ -107,10 +122,10 @@ export default function DashboardPage() {
         </div>
 
         {/* Profile Completion Bar in Banner */}
-        <div className="mt-6 pt-5 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-300">
+        <div className="mt-6 pt-5 border-t border-slate-700/60 relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-300">
           <div className="flex items-center gap-3">
             <span className="font-semibold text-white">Profile Readiness:</span>
-            <div className="w-36 sm:w-48 bg-slate-800 rounded-full h-2.5 overflow-hidden">
+            <div className="w-36 sm:w-48 bg-slate-800/90 rounded-full h-2.5 overflow-hidden">
               <div
                 className={`h-2.5 rounded-full transition-all duration-500 ${
                   profileComp >= 80 ? 'bg-emerald-500' : profileComp >= 50 ? 'bg-sky-400' : 'bg-amber-400'

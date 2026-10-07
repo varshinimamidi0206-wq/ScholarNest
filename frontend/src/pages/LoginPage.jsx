@@ -79,7 +79,7 @@ export default function LoginPage() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Email Address
@@ -109,7 +109,7 @@ export default function LoginPage() {
               <input
                 type={showPassword ? 'text' : 'password'}
                 required
-                autoComplete="current-password"
+                autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"

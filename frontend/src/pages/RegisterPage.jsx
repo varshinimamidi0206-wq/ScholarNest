@@ -30,8 +30,22 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
-      <div className="max-w-md w-full bg-white rounded-2xl border border-slate-200/90 shadow-lg shadow-slate-100 p-8">
+    <div className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-12 overflow-hidden">
+      {/* 1. Blurred Study/Workspace Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 filter blur-[6px] pointer-events-none"
+        style={{ backgroundImage: `url('/assets/scholarnest-auth-bg.png')` }}
+        aria-hidden="true"
+      />
+
+      {/* 2. Soft Light Tint Overlay (ScholarNest Blue/White Visual Identity) */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-sky-50/80 via-white/85 to-slate-100/90 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* 3. Sharp Clean White Registration Card */}
+      <div className="relative z-10 max-w-md w-full bg-white rounded-2xl border border-slate-200/90 shadow-2xl shadow-sky-950/10 p-8 sm:p-9 transition-all">
         
         {/* Brand Header */}
         <div className="text-center mb-8">
@@ -62,9 +76,10 @@ export default function RegisterPage() {
               <input
                 type="text"
                 required
+                autoComplete="off"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Varshini Rao"
+                placeholder="Enter your full name"
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white transition-all"
               />
             </div>
@@ -79,9 +94,10 @@ export default function RegisterPage() {
               <input
                 type="email"
                 required
+                autoComplete="off"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="varshini@example.com"
+                placeholder="Enter your email address"
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white transition-all"
               />
             </div>
@@ -97,9 +113,10 @@ export default function RegisterPage() {
                 type={showPassword ? 'text' : 'password'}
                 required
                 minLength={6}
+                autoComplete="new-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-10 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white transition-all"
               />
               <button

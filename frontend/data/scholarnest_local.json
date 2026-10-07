@@ -159,6 +159,14 @@
       "name": "Login Test",
       "email": "login_test_1791355410462@example.com",
       "password_hash": "$2b$10$o15KNXamhC9KgoqoMc6M7eQksZDXZ.zRFCpaq8HJAfnW4zvXbOwOu"
+    },
+    {
+      "id": "2ef9697f-2d88-45ef-a28b-b95ab1182f0b",
+      "created_at": "2026-10-07T09:12:38.073Z",
+      "updated_at": "2026-10-07T09:12:38.073Z",
+      "name": "Promise Test",
+      "email": "handler_test_1791364357251@example.com",
+      "password_hash": "$2b$10$f1Jyqst5oSXTHzs37gsoDOIYt8OFGxDQiqleeZyDur7r3kR5LAer."
     }
   ],
   "students": [
@@ -464,6 +472,14 @@
       "updated_at": "2026-10-07T06:43:32.555Z",
       "user_id": "504ce05e-8578-4023-956c-94b5881c185b",
       "full_name": "Login Test",
+      "profile_completion": 10
+    },
+    {
+      "id": "1f56c077-db41-45a0-80b6-a0b97b80008f",
+      "created_at": "2026-10-07T09:12:38.075Z",
+      "updated_at": "2026-10-07T09:12:38.075Z",
+      "user_id": "2ef9697f-2d88-45ef-a28b-b95ab1182f0b",
+      "full_name": "Promise Test",
       "profile_completion": 10
     }
   ],
@@ -1252,6 +1268,15 @@
       "created_at": "2026-10-07T06:43:32.556Z",
       "updated_at": "2026-10-07T06:43:32.556Z",
       "user_id": "504ce05e-8578-4023-956c-94b5881c185b",
+      "title": "Welcome to ScholarNest!",
+      "message": "Complete your academic and family profile to discover personalized scholarships.",
+      "type": "PROFILE"
+    },
+    {
+      "id": "76dfb109-893d-41b0-92da-7fc23bb53c78",
+      "created_at": "2026-10-07T09:12:38.076Z",
+      "updated_at": "2026-10-07T09:12:38.076Z",
+      "user_id": "2ef9697f-2d88-45ef-a28b-b95ab1182f0b",
       "title": "Welcome to ScholarNest!",
       "message": "Complete your academic and family profile to discover personalized scholarships.",
       "type": "PROFILE"

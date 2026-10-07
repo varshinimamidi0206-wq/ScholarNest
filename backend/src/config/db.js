@@ -266,10 +266,42 @@ class DatabaseService {
   async init() {
     if (this.isPostgres) {
       try {
-        this.pool = new Pool({
+        let poolConfig = {
           connectionString: config.DATABASE_URL,
           ssl: config.DATABASE_URL.includes('localhost') ? false : { rejectUnauthorized: false },
-        });
+          connectionTimeoutMillis: 3000,
+        };
+
+        const lastAt = config.DATABASE_URL.lastIndexOf('@');
+        if (lastAt !== -1 && config.DATABASE_URL.indexOf('@') !== lastAt) {
+          try {
+            const protoEnd = config.DATABASE_URL.indexOf('://');
+            const authPart = config.DATABASE_URL.slice(protoEnd + 3, lastAt);
+            const hostPart = config.DATABASE_URL.slice(lastAt + 1);
+            const colonIdx = authPart.indexOf(':');
+            const user = authPart.slice(0, colonIdx);
+            const password = authPart.slice(colonIdx + 1);
+            const slashIdx = hostPart.indexOf('/');
+            const hostPort = slashIdx !== -1 ? hostPart.slice(0, slashIdx) : hostPart;
+            const database = slashIdx !== -1 ? hostPart.slice(slashIdx + 1).split('?')[0] : 'postgres';
+            const [host, portStr] = hostPort.split(':');
+            const port = portStr ? parseInt(portStr, 10) : 5432;
+
+            poolConfig = {
+              user,
+              password,
+              host,
+              port,
+              database,
+              ssl: { rejectUnauthorized: false },
+              connectionTimeoutMillis: 3000,
+            };
+          } catch (pe) {
+            // Keep default poolConfig
+          }
+        }
+
+        this.pool = new Pool(poolConfig);
         await this.pool.query('SELECT 1');
         console.log('[DB] Connected to PostgreSQL / Supabase successfully.');
         await this.runPostgresMigrations();

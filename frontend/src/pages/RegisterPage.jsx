@@ -33,19 +33,23 @@ export default function RegisterPage() {
     <div className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-12 overflow-hidden">
       {/* 1. Blurred Study/Workspace Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 filter blur-[6px] pointer-events-none"
-        style={{ backgroundImage: `url('/assets/scholarnest-auth-bg.png')` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+        style={{
+          backgroundImage: `url('/assets/scholarnest-auth-bg.png')`,
+          filter: 'blur(3px)',
+          transform: 'scale(1.05)',
+        }}
         aria-hidden="true"
       />
 
       {/* 2. Soft Light Tint Overlay (ScholarNest Blue/White Visual Identity) */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-sky-50/80 via-white/85 to-slate-100/90 pointer-events-none"
+        className="absolute inset-0 bg-sky-950/10 bg-gradient-to-b from-white/30 via-sky-50/20 to-white/40 pointer-events-none"
         aria-hidden="true"
       />
 
       {/* 3. Sharp Clean White Registration Card */}
-      <div className="relative z-10 max-w-md w-full bg-white rounded-2xl border border-slate-200/90 shadow-2xl shadow-sky-950/10 p-8 sm:p-9 transition-all">
+      <div className="relative z-10 max-w-md w-full bg-white rounded-2xl border border-slate-200/90 shadow-2xl shadow-slate-900/15 p-8 sm:p-9 transition-all">
         
         {/* Brand Header */}
         <div className="text-center mb-8">
@@ -105,7 +109,7 @@ export default function RegisterPage() {
 
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-              Password (at least 6 characters)
+              Password
             </label>
             <div className="relative">
               <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />

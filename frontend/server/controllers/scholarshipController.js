@@ -1,6 +1,27 @@
 import { db } from '../config/db.js';
 import { calculateMatchScore } from '../services/matchingService.js';
 
+// In-memory cache for active scholarships to prevent repeated DB full-table scans
+let cachedActiveScholarships = null;
+let lastScholarshipsFetch = 0;
+const SCHOLARSHIP_CACHE_TTL = 60 * 1000;
+
+export async function getActiveScholarships() {
+  const now = Date.now();
+  if (cachedActiveScholarships && now - lastScholarshipsFetch < SCHOLARSHIP_CACHE_TTL) {
+    return cachedActiveScholarships;
+  }
+  const res = await db.query('SELECT * FROM scholarships WHERE status = $1', ['ACTIVE']);
+  cachedActiveScholarships = res.rows || [];
+  lastScholarshipsFetch = now;
+  return cachedActiveScholarships;
+}
+
+export function invalidateScholarshipsCache() {
+  cachedActiveScholarships = null;
+  lastScholarshipsFetch = 0;
+}
+
 export const getScholarships = async (req, res, next) => {
   try {
     const {
@@ -14,8 +35,23 @@ export const getScholarships = async (req, res, next) => {
       sort = 'deadline',
     } = req.query;
 
-    let scholarshipsRes = await db.query('SELECT * FROM scholarships WHERE status = $1', ['ACTIVE']);
-    let list = scholarshipsRes.rows || [];
+    // Fetch active scholarships (from cache or DB) and user data in parallel
+    const activePromise = getActiveScholarships();
+    let studentPromise = Promise.resolve(null);
+    let savedPromise = Promise.resolve({ rows: [] });
+
+    if (req.user && req.user.id) {
+      studentPromise = db.query('SELECT * FROM students WHERE user_id = $1', [req.user.id]);
+      savedPromise = db.query('SELECT scholarship_id FROM saved_scholarships WHERE user_id = $1', [req.user.id]);
+    }
+
+    const [activeRows, sRes, savedRes] = await Promise.all([
+      activePromise,
+      studentPromise,
+      savedPromise,
+    ]);
+
+    let list = [...activeRows];
 
     // Filter by search (name or provider or description)
     if (search && search.trim()) {
@@ -84,18 +120,11 @@ export const getScholarships = async (req, res, next) => {
       }
     }
 
-    // If user is authenticated, compute dynamic match score & saved state
-    let student = null;
+    // Process authenticated matching & saved status
+    let student = sRes && sRes.rows && sRes.rows.length > 0 ? sRes.rows[0] : null;
     let savedIds = new Set();
-    if (req.user && req.user.id) {
-      const sRes = await db.query('SELECT * FROM students WHERE user_id = $1', [req.user.id]);
-      if (sRes.rows && sRes.rows.length > 0) {
-        student = sRes.rows[0];
-      }
-      const savedRes = await db.query('SELECT scholarship_id FROM saved_scholarships WHERE user_id = $1', [req.user.id]);
-      if (savedRes.rows) {
-        savedRes.rows.forEach(r => savedIds.add(r.scholarship_id));
-      }
+    if (savedRes && savedRes.rows) {
+      savedRes.rows.forEach(r => savedIds.add(r.scholarship_id));
     }
 
     list = list.map(item => {
@@ -149,21 +178,23 @@ export const getScholarshipById = async (req, res, next) => {
     let matchResult = null;
 
     if (req.user && req.user.id) {
-      const savedRes = await db.query(
-        'SELECT id FROM saved_scholarships WHERE user_id = $1 AND scholarship_id = $2',
-        [req.user.id, id]
-      );
-      isSaved = savedRes.rows && savedRes.rows.length > 0;
+      // Execute saved, application, and student checks in parallel
+      const [savedRes, appRes, stRes] = await Promise.all([
+        db.query(
+          'SELECT id FROM saved_scholarships WHERE user_id = $1 AND scholarship_id = $2',
+          [req.user.id, id]
+        ),
+        db.query(
+          'SELECT * FROM applications WHERE user_id = $1 AND scholarship_id = $2',
+          [req.user.id, id]
+        ),
+        db.query('SELECT * FROM students WHERE user_id = $1', [req.user.id]),
+      ]);
 
-      const appRes = await db.query(
-        'SELECT * FROM applications WHERE user_id = $1 AND scholarship_id = $2',
-        [req.user.id, id]
-      );
+      isSaved = Boolean(savedRes.rows && savedRes.rows.length > 0);
       if (appRes.rows && appRes.rows.length > 0) {
         application = appRes.rows[0];
       }
-
-      const stRes = await db.query('SELECT * FROM students WHERE user_id = $1', [req.user.id]);
       if (stRes.rows && stRes.rows.length > 0) {
         matchResult = calculateMatchScore(stRes.rows[0], scholarship);
       }
@@ -215,6 +246,7 @@ export const createScholarship = async (req, res, next) => {
       ]
     );
 
+    invalidateScholarshipsCache();
     res.status(201).json({
       success: true,
       message: 'Scholarship created successfully.',
@@ -263,6 +295,7 @@ export const updateScholarship = async (req, res, next) => {
       return res.status(404).json({ success: false, message: 'Scholarship not found.' });
     }
 
+    invalidateScholarshipsCache();
     res.json({
       success: true,
       message: 'Scholarship updated successfully.',
@@ -277,6 +310,7 @@ export const deleteScholarship = async (req, res, next) => {
   try {
     const { id } = req.params;
     const delRes = await db.query('DELETE FROM scholarships WHERE id = $1', [id]);
+    invalidateScholarshipsCache();
     res.json({
       success: true,
       message: 'Scholarship removed successfully.',

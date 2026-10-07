@@ -376,6 +376,16 @@ class DatabaseService {
 
   async runPostgresMigrations() {
     try {
+      // Fast check: if scholarships table already exists and is populated, skip slow schema re-execution
+      const fastCheck = await this.pool.query(
+        "SELECT to_regclass('public.scholarships') as tbl, (SELECT count(*) FROM scholarships) as count"
+      ).catch(() => null);
+
+      if (fastCheck && fastCheck.rows[0]?.tbl && parseInt(fastCheck.rows[0]?.count || '0', 10) > 0) {
+        console.log('[DB] PostgreSQL schema already initialized. Skipping migration.');
+        return;
+      }
+
       const candidates = [
         path.resolve(__dirname, '../../../database/schema.sql'),
         path.resolve(__dirname, '../../database/schema.sql'),

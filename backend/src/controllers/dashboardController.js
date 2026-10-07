@@ -1,33 +1,46 @@
 import { db } from '../config/db.js';
 import { calculateMatchScore } from '../services/matchingService.js';
 
+// In-memory cache for active scholarships (TTL 60s) to avoid repeated database hits
+let cachedActiveScholarships = null;
+let lastScholarshipsFetch = 0;
+const SCHOLARSHIP_CACHE_TTL = 60 * 1000;
+
+async function getActiveScholarships() {
+  const now = Date.now();
+  if (cachedActiveScholarships && now - lastScholarshipsFetch < SCHOLARSHIP_CACHE_TTL) {
+    return cachedActiveScholarships;
+  }
+  const res = await db.query('SELECT * FROM scholarships WHERE status = $1', ['ACTIVE']);
+  cachedActiveScholarships = res.rows || [];
+  lastScholarshipsFetch = now;
+  return cachedActiveScholarships;
+}
+
 export const getDashboardData = async (req, res, next) => {
   try {
     const userId = req.user.id;
 
-    // 1. User & Student Profile
-    const studentRes = await db.query('SELECT * FROM students WHERE user_id = $1', [userId]);
+    // Run independent database queries in parallel
+    const [studentRes, savedRes, appsRes, allScholarships] = await Promise.all([
+      db.query('SELECT * FROM students WHERE user_id = $1', [userId]),
+      db.query('SELECT count(*) FROM saved_scholarships WHERE user_id = $1', [userId]),
+      db.query(
+        `SELECT a.id, a.scholarship_id, a.status, a.notes, a.applied_at as applied_date, a.updated_at,
+                s.name as scholarship_name, s.provider, s.amount, s.deadline
+         FROM applications a
+         JOIN scholarships s ON a.scholarship_id = s.id
+         WHERE a.user_id = $1
+         ORDER BY a.updated_at DESC`,
+        [userId]
+      ),
+      getActiveScholarships(),
+    ]);
+
     const student = (studentRes.rows && studentRes.rows[0]) || { profile_completion: 0 };
-
-    // 2. Saved Scholarships Count
-    const savedRes = await db.query('SELECT count(*) FROM saved_scholarships WHERE user_id = $1', [userId]);
-    const savedCount = parseInt(savedRes.rows[0].count, 10) || 0;
-
-    // 3. Applications Stats
-    const appsRes = await db.query(
-      `SELECT a.*, s.name as scholarship_name, s.provider, s.amount, s.deadline
-       FROM applications a
-       JOIN scholarships s ON a.scholarship_id = s.id
-       WHERE a.user_id = $1
-       ORDER BY a.updated_at DESC`,
-      [userId]
-    );
+    const savedCount = parseInt(savedRes.rows[0]?.count, 10) || 0;
     const applications = appsRes.rows || [];
     const activeApplicationsCount = applications.filter(a => !['REJECTED', 'SAVED'].includes(a.status)).length;
-
-    // 4. All active scholarships and matching calculation
-    const allScholarshipsRes = await db.query('SELECT * FROM scholarships WHERE status = $1', ['ACTIVE']);
-    const allScholarships = allScholarshipsRes.rows || [];
 
     let matchingCount = 0;
     const scoredScholarships = allScholarships.map(s => {

@@ -5,16 +5,11 @@ import {
   Search, 
   Bookmark, 
   Clock, 
-  FileText, 
   ArrowRight, 
   Sparkles, 
-  CheckCircle2, 
   AlertCircle, 
-  Loader2, 
   TrendingUp, 
   ChevronRight,
-  ShieldAlert,
-  Award
 } from 'lucide-react';
 import { dashboardAPI } from '../services/api';
 import { useAuth } from '../hooks/useAuth';
@@ -22,37 +17,45 @@ import ScholarshipCard from '../components/ScholarshipCard';
 
 export default function DashboardPage() {
   const { user } = useAuth();
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  
+  // Optimistic initial data from cache so the page renders instantly without blocking
+  const [data, setData] = useState(() => {
+    try {
+      const cached = localStorage.getItem('scholarnest_dashboard_cache');
+      return cached ? JSON.parse(cached) : null;
+    } catch {
+      return null;
+    }
+  });
+  const [loading, setLoading] = useState(!data);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
     dashboardAPI.getDashboard()
       .then(res => {
-        if (res.data.success) {
+        if (isMounted && res.data.success) {
           setData(res.data.dashboard);
+          try {
+            localStorage.setItem('scholarnest_dashboard_cache', JSON.stringify(res.data.dashboard));
+          } catch (e) {
+            // ignore storage quota issues
+          }
         }
       })
       .catch(err => {
-        setError(err.response?.data?.message || 'Failed to load dashboard metrics.');
+        if (isMounted && !data) {
+          setError(err.response?.data?.message || 'Failed to load dashboard metrics.');
+        }
       })
       .finally(() => {
-        setLoading(false);
+        if (isMounted) setLoading(false);
       });
+
+    return () => { isMounted = false; };
   }, []);
 
-  if (loading) {
-    return (
-      <div className="min-h-[70vh] flex items-center justify-center">
-        <div className="flex flex-col items-center gap-2">
-          <Loader2 className="w-8 h-8 text-sky-600 animate-spin" />
-          <span className="text-xs text-slate-500 font-medium">Loading your ScholarNest Dashboard...</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !data) {
+  if (error && !data) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="p-6 bg-rose-50 border border-rose-200 text-rose-800 rounded-2xl text-center">
@@ -64,7 +67,8 @@ export default function DashboardPage() {
     );
   }
 
-  const profileComp = data.profileCompletion ?? 0;
+  const isInitialLoading = loading && !data;
+  const profileComp = data?.profileCompletion ?? 0;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-fade-in">
@@ -80,7 +84,7 @@ export default function DashboardPage() {
           aria-hidden="true"
         />
 
-        {/* Subtle Dark Blue Gradient Overlay: darker on the left for crisp text contrast, transparent toward right so laptop/workspace area remains clearly visible */}
+        {/* Subtle Dark Blue Gradient Overlay */}
         <div
           className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-sky-950/50 to-transparent pointer-events-none"
           aria-hidden="true"
@@ -93,13 +97,19 @@ export default function DashboardPage() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Welcome back, {data.userName || user?.name || 'Scholar'}
+            Welcome back, {data?.userName || user?.name || 'Scholar'}
           </h1>
 
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-            Your personalized scholarship matching engine is active. We found{' '}
-            <strong className="text-sky-300 font-semibold">{data.totalMatchingScholarships} scholarships</strong>{' '}
-            matching your current academic, income, and category credentials.
+            {isInitialLoading ? (
+              <span>Your personalized scholarship matching engine is active. Finding matching opportunities based on your academic credentials...</span>
+            ) : (
+              <>
+                Your personalized scholarship matching engine is active. We found{' '}
+                <strong className="text-sky-300 font-semibold">{data.totalMatchingScholarships} scholarships</strong>{' '}
+                matching your current academic, income, and category credentials.
+              </>
+            )}
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -115,7 +125,7 @@ export default function DashboardPage() {
               to="/profile"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-white text-xs sm:text-sm font-semibold rounded-xl border border-slate-700 transition-all backdrop-blur-xs"
             >
-              <span>Update Profile ({profileComp}%)</span>
+              <span>Update Profile ({isInitialLoading ? '...' : `${profileComp}%`})</span>
               <ChevronRight className="w-4 h-4 text-slate-400" />
             </Link>
           </div>
@@ -128,15 +138,17 @@ export default function DashboardPage() {
             <div className="w-36 sm:w-48 bg-slate-800/90 rounded-full h-2.5 overflow-hidden">
               <div
                 className={`h-2.5 rounded-full transition-all duration-500 ${
-                  profileComp >= 80 ? 'bg-emerald-500' : profileComp >= 50 ? 'bg-sky-400' : 'bg-amber-400'
+                  isInitialLoading
+                    ? 'bg-sky-400 animate-pulse'
+                    : profileComp >= 80 ? 'bg-emerald-500' : profileComp >= 50 ? 'bg-sky-400' : 'bg-amber-400'
                 }`}
-                style={{ width: `${profileComp}%` }}
+                style={{ width: `${isInitialLoading ? 50 : profileComp}%` }}
               ></div>
             </div>
-            <span className="font-bold text-white">{profileComp}%</span>
+            <span className="font-bold text-white">{isInitialLoading ? '...' : `${profileComp}%`}</span>
           </div>
 
-          {profileComp < 80 && (
+          {!isInitialLoading && profileComp < 80 && (
             <Link to="/profile" className="text-sky-400 hover:underline flex items-center gap-1 font-medium">
               <span>Add remaining details for higher match accuracy</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -153,9 +165,13 @@ export default function DashboardPage() {
             <span className="text-xs font-semibold uppercase tracking-wider">Matching Schemes</span>
             <Sparkles className="w-4 h-4 text-sky-600" />
           </div>
-          <div className="text-3xl font-extrabold text-slate-900">
-            {data.totalMatchingScholarships}
-          </div>
+          {isInitialLoading ? (
+            <div className="h-9 w-20 bg-slate-200 rounded animate-pulse my-1"></div>
+          ) : (
+            <div className="text-3xl font-extrabold text-slate-900">
+              {data.totalMatchingScholarships}
+            </div>
+          )}
           <div className="text-[11px] text-slate-500 mt-1">
             Deterministic match &ge; 60%
           </div>
@@ -167,9 +183,13 @@ export default function DashboardPage() {
             <span className="text-xs font-semibold uppercase tracking-wider">Saved in Nest</span>
             <Bookmark className="w-4 h-4 text-amber-600" />
           </div>
-          <div className="text-3xl font-extrabold text-slate-900">
-            {data.savedScholarshipsCount}
-          </div>
+          {isInitialLoading ? (
+            <div className="h-9 w-20 bg-slate-200 rounded animate-pulse my-1"></div>
+          ) : (
+            <div className="text-3xl font-extrabold text-slate-900">
+              {data.savedScholarshipsCount}
+            </div>
+          )}
           <Link to="/saved" className="text-[11px] text-sky-600 font-semibold hover:underline mt-1 block">
             View bookmarked &rarr;
           </Link>
@@ -181,11 +201,15 @@ export default function DashboardPage() {
             <span className="text-xs font-semibold uppercase tracking-wider">Active In Progress</span>
             <Clock className="w-4 h-4 text-purple-600" />
           </div>
-          <div className="text-3xl font-extrabold text-slate-900">
-            {data.activeApplicationsCount}
-          </div>
+          {isInitialLoading ? (
+            <div className="h-9 w-20 bg-slate-200 rounded animate-pulse my-1"></div>
+          ) : (
+            <div className="text-3xl font-extrabold text-slate-900">
+              {data.activeApplicationsCount}
+            </div>
+          )}
           <Link to="/applications" className="text-[11px] text-sky-600 font-semibold hover:underline mt-1 block">
-            Open tracker ({data.totalApplicationsCount} total) &rarr;
+            Open tracker {data?.totalApplicationsCount !== undefined ? `(${data.totalApplicationsCount} total)` : ''} &rarr;
           </Link>
         </div>
 
@@ -195,9 +219,13 @@ export default function DashboardPage() {
             <span className="text-xs font-semibold uppercase tracking-wider">Deadlines in 45d</span>
             <Clock className="w-4 h-4 text-rose-600" />
           </div>
-          <div className="text-3xl font-extrabold text-slate-900">
-            {data.upcomingDeadlines?.length || 0}
-          </div>
+          {isInitialLoading ? (
+            <div className="h-9 w-20 bg-slate-200 rounded animate-pulse my-1"></div>
+          ) : (
+            <div className="text-3xl font-extrabold text-slate-900">
+              {data.upcomingDeadlines?.length || 0}
+            </div>
+          )}
           <div className="text-[11px] text-slate-500 mt-1">
             Urgent opportunities
           </div>
@@ -224,7 +252,22 @@ export default function DashboardPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {data.topRecommended?.length > 0 ? (
+            {isInitialLoading ? (
+              [1, 2].map((idx) => (
+                <div key={idx} className="p-6 bg-white rounded-2xl border border-slate-200/90 shadow-xs space-y-4 animate-pulse">
+                  <div className="flex items-center justify-between">
+                    <div className="h-4 w-28 bg-slate-200 rounded"></div>
+                    <div className="h-6 w-16 bg-slate-100 rounded-full"></div>
+                  </div>
+                  <div className="h-5 w-3/4 bg-slate-200 rounded"></div>
+                  <div className="h-3 w-1/2 bg-slate-100 rounded"></div>
+                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                    <div className="h-4 w-24 bg-slate-200 rounded"></div>
+                    <div className="h-8 w-20 bg-slate-200 rounded-xl"></div>
+                  </div>
+                </div>
+              ))
+            ) : data.topRecommended?.length > 0 ? (
               data.topRecommended.map((sch) => (
                 <ScholarshipCard key={sch.id} scholarship={sch} />
               ))
@@ -250,7 +293,17 @@ export default function DashboardPage() {
             </div>
 
             <div className="space-y-3">
-              {data.upcomingDeadlines?.length > 0 ? (
+              {isInitialLoading ? (
+                [1, 2, 3].map((idx) => (
+                  <div key={idx} className="p-3 rounded-xl border border-slate-100 space-y-2 animate-pulse">
+                    <div className="flex items-center justify-between">
+                      <div className="h-3 w-36 bg-slate-200 rounded"></div>
+                      <div className="h-3 w-12 bg-slate-100 rounded-full"></div>
+                    </div>
+                    <div className="h-2.5 w-24 bg-slate-100 rounded"></div>
+                  </div>
+                ))
+              ) : data.upcomingDeadlines?.length > 0 ? (
                 data.upcomingDeadlines.map((dl) => (
                   <Link
                     key={dl.id}
@@ -301,27 +354,43 @@ export default function DashboardPage() {
             <div className="grid grid-cols-2 gap-2 text-xs">
               <div className="p-2.5 bg-slate-50 rounded-xl">
                 <div className="text-slate-500 text-[11px]">Preparing Docs</div>
-                <div className="font-bold text-slate-900 text-base mt-0.5">
-                  {data.statusCounts?.DOCUMENTS_PREPARING || 0}
-                </div>
+                {isInitialLoading ? (
+                  <div className="h-5 w-8 bg-slate-200 rounded animate-pulse mt-1"></div>
+                ) : (
+                  <div className="font-bold text-slate-900 text-base mt-0.5">
+                    {data.statusCounts?.DOCUMENTS_PREPARING || 0}
+                  </div>
+                )}
               </div>
               <div className="p-2.5 bg-slate-50 rounded-xl">
                 <div className="text-slate-500 text-[11px]">Ready to Apply</div>
-                <div className="font-bold text-slate-900 text-base mt-0.5">
-                  {data.statusCounts?.READY_TO_APPLY || 0}
-                </div>
+                {isInitialLoading ? (
+                  <div className="h-5 w-8 bg-slate-200 rounded animate-pulse mt-1"></div>
+                ) : (
+                  <div className="font-bold text-slate-900 text-base mt-0.5">
+                    {data.statusCounts?.READY_TO_APPLY || 0}
+                  </div>
+                )}
               </div>
               <div className="p-2.5 bg-slate-50 rounded-xl">
                 <div className="text-slate-500 text-[11px]">Submitted</div>
-                <div className="font-bold text-slate-900 text-base mt-0.5">
-                  {data.statusCounts?.APPLIED || 0}
-                </div>
+                {isInitialLoading ? (
+                  <div className="h-5 w-8 bg-slate-200 rounded animate-pulse mt-1"></div>
+                ) : (
+                  <div className="font-bold text-slate-900 text-base mt-0.5">
+                    {data.statusCounts?.APPLIED || 0}
+                  </div>
+                )}
               </div>
               <div className="p-2.5 bg-slate-50 rounded-xl">
                 <div className="text-slate-500 text-[11px]">Selected</div>
-                <div className="font-bold text-emerald-600 text-base mt-0.5">
-                  {data.statusCounts?.SELECTED || 0}
-                </div>
+                {isInitialLoading ? (
+                  <div className="h-5 w-8 bg-slate-200 rounded animate-pulse mt-1"></div>
+                ) : (
+                  <div className="font-bold text-emerald-600 text-base mt-0.5">
+                    {data.statusCounts?.SELECTED || 0}
+                  </div>
+                )}
               </div>
             </div>
           </div>

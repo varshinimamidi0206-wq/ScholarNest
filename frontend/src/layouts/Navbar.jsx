@@ -31,17 +31,23 @@ export default function Navbar() {
   const [unreadCount, setUnreadCount] = useState(0);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      notificationAPI.getNotifications()
-        .then(res => {
-          if (res.data.success) {
-            setNotifications(res.data.notifications || []);
-            setUnreadCount((res.data.notifications || []).filter(n => !n.is_read).length);
-          }
-        })
-        .catch(() => {});
+    if (!isAuthenticated) {
+      setNotifications([]);
+      setUnreadCount(0);
+      return;
     }
-  }, [isAuthenticated, location.pathname]);
+    let isMounted = true;
+    notificationAPI.getNotifications()
+      .then(res => {
+        if (isMounted && res.data.success) {
+          setNotifications(res.data.notifications || []);
+          setUnreadCount((res.data.notifications || []).filter(n => !n.is_read).length);
+        }
+      })
+      .catch(() => {});
+
+    return () => { isMounted = false; };
+  }, [isAuthenticated]);
 
   const handleMarkAsRead = async (id) => {
     try {

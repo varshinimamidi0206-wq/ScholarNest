@@ -126,12 +126,14 @@ export const login = async (req, res, next) => {
 
 export const getMe = async (req, res, next) => {
   try {
-    const userRes = await db.query('SELECT id, name, email, created_at FROM users WHERE id = $1', [req.user.id]);
+    const [userRes, studentRes] = await Promise.all([
+      db.query('SELECT id, name, email, created_at FROM users WHERE id = $1', [req.user.id]),
+      db.query('SELECT * FROM students WHERE user_id = $1', [req.user.id]),
+    ]);
+
     if (!userRes.rows || userRes.rows.length === 0) {
       return res.status(404).json({ success: false, message: 'User not found.' });
     }
-
-    const studentRes = await db.query('SELECT * FROM students WHERE user_id = $1', [req.user.id]);
 
     res.json({
       success: true,
